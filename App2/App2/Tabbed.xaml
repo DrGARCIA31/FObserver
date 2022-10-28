@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+            xmlns:app2="clr-namespace:App2"
+            x:Class="App2.Tabbed"
+            xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+            android:TabbedPage.ToolbarPlacement="Bottom">
+  <!--Pages can be added as references or inline-->
+    
+    <app2:HomePage Title="Inicio" IconImageSource="casa.png"></app2:HomePage>
+    <app2:Transaccioness Title="Movimientos" IconImageSource="dinero.png"></app2:Transaccioness>
+    <app2:Inventarioo Title="Inventario" IconImageSource="mochila.png"></app2:Inventarioo>
+    <app2:Clientess Title="Cliente" IconImageSource="grupo.png"></app2:Clientess>
+
+</TabbedPage>

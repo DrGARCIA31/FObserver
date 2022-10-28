@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="App2.Inventarioo">
+
+    <StackLayout>
+        <Label Text="Servicios y Productos"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" 
+                FontAttributes="Bold"
+                   TextColor="Black"
+                   FontSize="24"/>
+        <Entry x:Name="txtIdInventario" IsVisible="False"/>
+        <Entry x:Name="txtCProducto" Placeholder="Codigo Producto"/>
+        <Entry x:Name="txtNombreP" Placeholder="Nombre del producto"/>
+        <Entry x:Name="txtEstado" Placeholder="Estado del producto"/>
+        <Entry x:Name="txtDescripcion" Placeholder="Descripcion"/>
+        <Entry x:Name="txtCantidad" Placeholder="Cantidad"/>
+        <Entry x:Name="txtPropietario" Placeholder="Propietario"/>
+        <Button x:Name="btnRegistrar" Text="Resgistrar" Clicked="btnRegistrar_Clicked"/>
+        <Button x:Name="btnActualizar" Text="Actualizar" Clicked="btnActualizar_Clicked" IsVisible="False"/>
+        <Button x:Name="btnEliminar" Text="Eliminar" Clicked="btnEliminar_Clicked" IsVisible="False"/>
+        <ListView x:Name="lstInventario" ItemSelected="lstInventario_ItemSelected">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Text="{Binding IdInventario}" HorizontalOptions="CenterAndExpand" Grid.Row="0" Grid.Column="0" TextColor="DarkRed" FontAttributes="Bold"/>
+                            <Label Text="{Binding CProducto}" Grid.Row="0" Grid.Column="1" TextColor="DarkBlue" FontAttributes="Bold"/>
+                            <Label Text="{Binding NombreP}" Grid.Row="0" Grid.Column="2" TextColor="Black" Grid.ColumnSpan="2" FontAttributes="Bold"/>
+                            <Label Text="{Binding Estado}" Grid.Row="0" Grid.Column="4" Grid.ColumnSpan="4" TextColor="Black" FontAttributes="Bold"/>
+                            <Label Text="{Binding Cantidad}" Grid.Row="1" Grid.Column="1" TextColor="Blue" FontAttributes="Bold"/>
+                            <Label Text="{Binding Propietario}" Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="4" TextColor="DarkBlue" FontAttributes="Bold"/>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+
+</ContentPage>

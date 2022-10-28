@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App2.RegisterUI">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label x:Name="lbl_principal"
+                   Text="Bienvenido a la página de registro"
+                   FontSize="Medium"/>
+            <ProgressBar x:Name="Porgreso"
+                         Progress="0"/>
+            <Grid>
+                <Label x:Name= "lbl_progreso"
+                       Text="50%"
+                       FontSize="Large"
+                       Margin="8"/>
+                
+                <Switch x:Name="sw_ejemplo"
+                        IsToggled="False"
+                        Toggled="sw_ejemplo_Toggled"/>
+            </Grid>
+            <Frame BackgroundColor="White">
+                <StackLayout Background="white"
+                             Margin="16">
+                    <Entry x:Name="lbl_nombre"
+                           Placeholder="Ingrese su nombre"
+                           FontSize="Medium"
+                           Completed="lbl_nombre_Completed"
+                           TextChanged="lbl_nombre_TextChanged"/>
+                    
+                    <Entry x:Name="lbl_correo"
+                           Placeholder="Ingrese su correo"
+                           FontSize="Medium"
+                           Completed="lbl_correo_Completed"/>
+                           
+                    <Entry x:Name="lbl_pass"
+                           Placeholder="Ingrese su contraseña"
+                           FontSize="Medium" IsPassword="True"
+                           Completed="lbl_pass_Completed"/>
+                    
+                    <Entry x:Name="lbl_pass2"
+                           Placeholder="Repita su contraseña"
+                           FontSize="Medium" IsPassword="True"
+                           Completed="lbl_pass2_Completed"/>
+                    <Grid ColumnDefinitions="auto,*">
+                        <CheckBox x:Name="cbox_terminos"
+                                  IsChecked="False"
+                                  CheckedChanged="cbox_terminos_CheckedChanged"
+                                  Grid.Column="0"/>
+                        <Label Text="Acepto términos y condiciones"
+                               Grid.Column="1"
+                               VerticalOptions="Center"/>
+                    </Grid>
+                </StackLayout>
+            </Frame>
+            <Button x:Name="btn_registrar"
+                    VerticalOptions="Center"
+                Text="Registrar"
+                BackgroundColor="DarkGray"
+                Clicked="btn_registrar_Clicked"
+                CornerRadius="10"
+                IsEnabled="True"
+                TextColor="Gray"
+                FontAttributes="Bold"
+                Padding="8"
+                Margin="32"
+                BorderWidth="2"/>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
