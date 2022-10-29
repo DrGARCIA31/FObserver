@@ -4,10 +4,13 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="App2.Inventarioo">
+             x:Class="App2.Inventarioo"
+             BackgroundColor="#0a8ba2">
 
     <ContentPage.Resources>
         <ResourceDictionary>
+            
+            
 
             <Style x:Key="labelWhite" TargetType="Label">
                 <Setter Property="HorizontalOptions"
