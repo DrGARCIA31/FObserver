@@ -9,7 +9,7 @@
     
     <app2:HomePage Title="Inicio" IconImageSource="casa.png"></app2:HomePage>
     <app2:Transaccioness Title="Movimientos" IconImageSource="dinero.png"></app2:Transaccioness>
-    <app2:Inventarioo Title="Inventario" IconImageSource="mochila.png"></app2:Inventarioo>
+    <app2:Inventarioo Title="Servicios" IconImageSource="mochila.png"></app2:Inventarioo>
     <app2:Clientess Title="Cliente" IconImageSource="grupo.png"></app2:Clientess>
 
 </TabbedPage>
