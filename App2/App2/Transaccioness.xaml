@@ -5,15 +5,62 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="App2.Transaccioness">
-    
-        <StackLayout>
-            <Label Text="Registro de Movimientos"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" 
-                FontAttributes="Bold"
-                   TextColor="Black"
-                   FontSize="24"/>
-        <Entry x:Name="txtIdTransacciones" IsVisible="False"/>
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+
+            <Style x:Key="labelWhite" TargetType="Label">
+                <Setter Property="HorizontalOptions"
+                        Value="Center" />
+                <Setter Property="VerticalOptions"
+                        Value="Center" />
+                <Setter Property="FontSize" Value="16" />
+                <Setter Property="TextColor" Value="White" />
+            </Style>
+
+            <Style x:Key="labelTitle" TargetType="Label">
+                <Setter Property="HorizontalOptions"
+                        Value="Center" />
+                <Setter Property="VerticalOptions"
+                        Value="Center" />
+                <Setter Property="FontSize" Value="20" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="TextColor" Value="Black" />
+            </Style>
+
+            <Style x:Key="Button" TargetType="Button">
+                <Setter Property="VerticalOptions"
+                        Value="Center" />
+                <Setter Property="BackgroundColor"
+                        Value="DarkGray" />
+                <Setter Property="IsEnabled"
+                        Value="True" />
+                <Setter Property="TextColor"
+                        Value="White" />
+                <Setter Property="FontAttributes"
+                        Value="Bold" />
+                <Setter Property="Padding"
+                        Value="2" />
+
+            </Style>
+
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+
+        <Frame  Margin="20,-40,20,0"  >
+
+            <StackLayout>
+
+
+
+                <StackLayout  HorizontalOptions="Center"  Margin="20,50">
+
+                    <Label Text="REGISTROS DE MOVIMIENTOS"
+                   Style="{StaticResource labelTitle}" />
+
+                </StackLayout>
+                <Entry x:Name="txtIdTransacciones" IsVisible="False"/>
         <Entry x:Name="txtCC" Placeholder="CC"/>
         <DatePicker x:Name="txtDia"/>
         <Entry x:Name="txtNombre" Placeholder="Nombre Cliente"/>
@@ -21,39 +68,53 @@
         <Entry x:Name="txtTransaccion" Placeholder="Tipo Movimiento"/>
         <Entry x:Name="txtDescripcion" Placeholder="Descripcion del movimiento"/>
         <Entry x:Name="txtValor" Placeholder="Valor"/>
-        <Button x:Name="btnRegistrar" Text="Registrar Movimiento" Clicked="btnRegistrar_Clicked"/>
-        <Button x:Name="btnActualizar" Text="Actualizar" Clicked="btnActualizar_Clicked" IsVisible="False"/>
-        <Button x:Name="btnEliminar" Text="Eliminar" Clicked="btnEliminar_Clicked" IsVisible="False"/>
-        <ListView x:Name="lstTransacciones" ItemSelected="lstTransacciones_ItemSelected">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell>
-                        <Grid>
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="auto"/>
-                                <RowDefinition Height="auto"/>
-                                
-                            </Grid.RowDefinitions>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="*"/>
-                            </Grid.ColumnDefinitions>
-                            <Label Text="{Binding IdTransacciones}" HorizontalOptions="CenterAndExpand" Grid.Row="0" Grid.Column="0" TextColor="DarkRed" FontAttributes="Bold" />
-                            <Label Text="{Binding CC}"  Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="2" TextColor="DarkBlue" FontAttributes="Bold"/>
-                            <Label Text="{Binding Dia}" Grid.Row="0" Grid.Column="1"  TextColor="Black" FontAttributes="Bold"/>
-                            <Label Text="{Binding Nombre}"  Grid.Row="0" Grid.Column="4" Grid.ColumnSpan="4" TextColor="Black" FontAttributes="Bold"/>
-                            <Label Text="{Binding Email}"  Grid.Row="1" Grid.Column="4" Grid.ColumnSpan="4" TextColor="DarkBlue" FontAttributes="Bold"/>
-                            <Label Text="{Binding Transaccion}"  Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3" TextColor="Black" FontAttributes="Bold"/>
-                            <Label Text="{Binding Valor}"  Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2" TextColor="Black" FontAttributes="Bold"/>
-                        </Grid>
-                    </ViewCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
-    </StackLayout>
-    
+                <Button x:Name="btnRegistrar" Text="Registrar Movimiento"
+                        Clicked="btnRegistrar_Clicked"
+                   Style="{StaticResource Key=Button}" />
+
+                <Button x:Name="btnActualizar" Text="Actualizar" Clicked="btnActualizar_Clicked"
+                        IsVisible="False" Style="{StaticResource Key=Button}"/>
+
+                <Button x:Name="btnEliminar" Text="Eliminar" Clicked="btnEliminar_Clicked"
+                        IsVisible="False" Style="{StaticResource Key=Button}"/>
+                <ListView x:Name="lstTransacciones" ItemSelected="lstTransacciones_ItemSelected">
+
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="auto"/>
+                                        <RowDefinition Height="auto"/>
+                                    </Grid.RowDefinitions>
+
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Text="{Binding IdTransacciones}" HorizontalOptions="CenterAndExpand" Grid.Row="0" Grid.Column="0" TextColor="DarkRed" FontAttributes="Bold" />
+                            <Label Text="{Binding CC}"  Grid.Row="0" Grid.Column="3" Grid.ColumnSpan="2" TextColor="DarkBlue" FontAttributes="Bold"/>
+                                    <Label Text="{Binding Dia}" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" TextColor="Black" FontAttributes="Bold"/>
+                            <Label Text="{Binding Nombre}"  Grid.Row="0" Grid.Column="5" Grid.ColumnSpan="4" TextColor="Black" FontAttributes="Bold"/>
+                            <Label Text="{Binding Email}"  Grid.Row="1" Grid.Column="5" Grid.ColumnSpan="5" TextColor="DarkBlue" FontAttributes="Bold"/>
+                                    <Label Text="{Binding Transaccion}"  Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" TextColor="Black" FontAttributes="Bold"/>
+                                    <Label Text="{Binding Valor}"  Grid.Row="1" Grid.Column="3" Grid.ColumnSpan="3" TextColor="Black" FontAttributes="Bold"/>
+                                </Grid>
+
+
+
+
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </Frame>
+
+
+
+    </ContentPage.Content>
 </ContentPage>
